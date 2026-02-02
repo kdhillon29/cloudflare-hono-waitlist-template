@@ -1,8 +1,15 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Hello from "../components/Hello.tsx";
+import Hero from "../components/Hero.astro";
+import SignUp from "../components/SignUp.tsx";
 ---
 
 <Layout title="Cloudflare Hono Waitlist Template">
-  <Hello client:load />
+  <!-- <Hero /> -->
+  <div
+    class="flex h-full w-full flex-col items-center justify-start gap-3 px-4 py-12"
+  >
+    <Hero />
+    <SignUp client:load />
+  </div>
 </Layout>
