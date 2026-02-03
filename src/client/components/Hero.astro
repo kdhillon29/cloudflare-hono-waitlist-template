@@ -1,5 +1,8 @@
 ---
-import Signup from "./SignUp";
+import Countdown from "./Countdown.tsx";
+
+const launchDate: Date = new Date();
+launchDate.setDate(launchDate.getDate() + 40);
 ---
 
 <div class="relative py-6">
@@ -62,19 +65,22 @@ import Signup from "./SignUp";
         />
       </div>
 
-      <div class="m-auto mt-6 w-full max-w-3xl space-y-6">
+      <div class="m-auto w-full max-w-5xl space-y-8 md:mt-6 md:space-y-6">
         <h1
           class="text-center text-4xl font-bold text-gray-800 md:text-5xl dark:text-white"
         >
           Get Started now
         </h1>
-        <h1 class="text-primary/40 text-center text-3xl font-semibold">
+        <h1
+          class="text-primary/40 text-center text-xl font-semibold md:text-3xl"
+        >
           Expenso - a platform to manage your expenses effortlessly
         </h1>
+        <Countdown targetDateString={launchDate.toISOString()} client:load />
         <p
-          class="text-neutral-content animate-pulse text-center text-lg font-bold"
+          class="text-neutral-content text-md animate-pulse text-center font-semibold"
         >
-          Launching in 2026
+          Launching in 2026 🚀
         </p>
 
         <!-- <div class="mt-12 flex flex-wrap justify-center gap-6">

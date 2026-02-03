@@ -20,6 +20,7 @@
     "astro": "^5.17.1",
     "eslint": "^9.39.2",
     "eslint-plugin-astro": "^1.5.0",
+    "hono": "^4.11.7",
     "lucide-react": "^0.563.0",
     "prettier": "^3.8.1",
     "prettier-plugin-astro": "^0.14.1",
