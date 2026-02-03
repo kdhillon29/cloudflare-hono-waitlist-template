@@ -6,13 +6,29 @@
     "directory": "./dist",
     "binding": "ASSETS"
   },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "expenso_local_db",
+      "database_id": "115a9449",
+      "migrations_dir": "./src/server/db/migrations"
+    }
+  ],
   "env": {
     "staging": {
       "vars": {
         "ENVIRONMENT": "staging",
         "CF_ACCESS_DOMAIN": "https://kdhillon.cloudflareaccess.com",
         "POLICY_AUD": "0f70fb532ada728433b9f695a340292f641865e40e60de8e8cd6c1d1aa097382"
-      }
+      },
+      "d1_databases": [
+        {
+          "binding": "DB",
+          "database_name": "expenso_staging_db",
+          "database_id": "115a9449-7875-4d26-944c-f5d25191e28f",
+          "migrations_dir": "./src/server/db/migrations"
+        }
+      ]
     },
     "production": {
       "vars": {
