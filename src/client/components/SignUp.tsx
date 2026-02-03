@@ -15,8 +15,8 @@ export const Signup = () => {
         <button className="btn btn-neutral join-item">Join</button>
       </div>
 
-      <p className="text-accent dark:text-accent mt-3 w-full text-center text-sm font-semibold">
-        Join Our Waiting List to get early access and special discounts!
+      <p className="text-accent-700 dark:text-accent mt-3 text-center text-sm font-semibold">
+        Subscribe for more updates and special discounts!
       </p>
     </div>
   );

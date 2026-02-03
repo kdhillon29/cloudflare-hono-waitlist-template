@@ -2,4 +2,22 @@
   "name": "cloudflare-hono-waitlist-template",
   "main": "src/server/index.ts",
   "compatibility_date": "2026-01-28",
+  "assets": {
+    "directory": "./dist",
+    "binding": "ASSETS"
+  },
+  "env": {
+    "staging": {
+      "vars": {
+        "ENVIRONMENT": "staging",
+        "CF_ACCESS_DOMAIN": "https://kdhillon.cloudflareaccess.com",
+        "POLICY_AUD": "0f70fb532ada728433b9f695a340292f641865e40e60de8e8cd6c1d1aa097382"
+      }
+    },
+    "production": {
+      "vars": {
+        "ENVIRONMENT": "production"
+      }
+    }
+  }
 }

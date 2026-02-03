@@ -92,7 +92,7 @@ const CountdownWithProgress = ({ targetDateString }: CountdownProps) => {
 
   const { days, hours, minutes, seconds } = remainingTime;
   return (
-    <section className="my-3">
+    <section className="py-3">
       <div className="flex w-full flex-wrap justify-center gap-2">
         <CircularProgress
           progress={100 - (Number(days) / 365) * 100}
