@@ -1,12 +1,24 @@
 import { useEffect, useState } from "react";
+import { type AppType } from "../../server";
+import { hc, type InferResponseType } from "hono/client";
 
+const client = hc<AppType>("/");
+type HealthResponse = InferResponseType<typeof client.api.health.$get>;
 export const ServerStatus = () => {
-  const [status, setStatus] = useState("...loading");
+  const [status, setStatus] = useState<HealthResponse | string>("Loading...");
 
   useEffect(() => {
-    fetch("/api/health")
-      .then((res) => res.json())
-      .then((data) => setStatus(data));
+    const fetchStatus = async () => {
+      try {
+        const response = await client.api.health.$get();
+        const data = await response.json();
+        setStatus(data);
+      } catch (error) {
+        setStatus("Error fetching server status");
+      }
+    };
+
+    fetchStatus();
   }, []);
 
   return (
