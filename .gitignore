@@ -25,3 +25,7 @@ pnpm-debug.log*
 
 .vscode/
 .wrangler/
+*/migrations/
+src/server/db/migrations/0000_slim_hellcat.sql
+src/server/db/migrations/meta/_journal.json
+src/server/db/migrations/meta/0000_snapshot.json
