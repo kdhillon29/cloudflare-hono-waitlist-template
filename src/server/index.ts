@@ -1,7 +1,11 @@
 import { Hono } from "hono";
 import { accessAuth } from "./middleware/auth";
 import type { D1Database } from "@cloudflare/workers-types";
-import { insertSubscriber, isSubscriberExists } from "./db/queries";
+import {
+  insertSubscriber,
+  isSubscriberExists,
+  countSubscribers,
+} from "./db/queries";
 import { zValidator } from "@hono/zod-validator";
 import { insertSubscriberSchema } from "../server/db/zod-schemas";
 interface CloudflareBindings {
@@ -33,6 +37,10 @@ const route = app
         user,
       });
     },
-  );
+  )
+  .get("/api/subscribers/count", async (c) => {
+    const count = await countSubscribers(c.env.DB);
+    return c.json(count);
+  });
 export type AppType = typeof route;
 export default app;

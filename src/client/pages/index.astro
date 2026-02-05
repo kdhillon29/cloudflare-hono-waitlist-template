@@ -5,6 +5,7 @@ import SignUp from "../components/SignUp.tsx";
 import Card from "../components/Card.astro";
 import Countdown from "../components/Countdown.tsx";
 import { ServerStatus } from "../components/ServerStatus";
+import SubscriberJoinedCard from "../components/SubscriberCount";
 ---
 
 <Layout title="Cloudflare Hono Waitlist Template">
@@ -13,7 +14,7 @@ import { ServerStatus } from "../components/ServerStatus";
     class="flex h-full w-full flex-col items-center justify-start gap-6 px-4 py-3 md:gap-3"
   >
     <Hero />
-
+    <!-- <SubscriberJoinedCard client:load /> -->
     <SignUp client:load />
     <div
       class="mt-3 gap-3 space-y-6 p-4 md:mt-12 md:flex md:justify-center md:space-y-0"

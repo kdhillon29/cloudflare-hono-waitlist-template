@@ -26,3 +26,9 @@ export const isSubscriberExists = async (
   });
   return subscriber;
 };
+
+export const countSubscribers = async (dbBinding: D1Database) => {
+  const db = getDb(dbBinding);
+  const countResult = await db.$count(subscribers);
+  return countResult;
+};
